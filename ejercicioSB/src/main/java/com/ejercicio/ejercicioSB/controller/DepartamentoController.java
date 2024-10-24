@@ -1,0 +1,42 @@
+package com.ejercicio.ejercicioSB.controller;
+
+import com.ejercicio.ejercicioSB.entity.Departamento;
+import com.ejercicio.ejercicioSB.service.impl.DepartamentoService;
+import jakarta.websocket.server.PathParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/v3")
+public class DepartamentoController {
+    @Autowired
+    private DepartamentoService departamentoService;
+
+    @GetMapping("/departamentos")
+    public List<Departamento> readAll() {
+        return departamentoService.readAll();
+    }
+
+    @GetMapping("/departamentos/{id}")
+    public Departamento readById(@PathVariable Integer id) {
+        return departamentoService.readById(id);
+    }
+
+    @PostMapping("/departamentos")
+    public Departamento create(@RequestBody Departamento departamento) {
+        return departamentoService.create(departamento);
+    }
+
+    @PutMapping("/departamentos")
+    public Departamento update(@RequestBody Departamento departamento){
+        return departamentoService.update(departamento);
+    }
+
+    @DeleteMapping("/departamentos")
+    public String deleteById(@RequestParam Integer id){
+        return departamentoService.deleteById(id);
+    }
+
+}
