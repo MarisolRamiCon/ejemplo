@@ -1,7 +1,13 @@
 package com.ejercicio.ejercicioSB.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Entity
 @Table(name = "departamento")
 public class Departamento {
@@ -16,6 +22,11 @@ public class Departamento {
     @Column(name = "precio")
     private Double precio;
 
+    @Column(name = "is_active")
+    private Boolean isActive=true;
+
+
+/*
     public Departamento(Integer id, Double m2, Double precio) {
         this.id = id;
         this.m2 = m2;
@@ -47,5 +58,5 @@ public class Departamento {
 
     public void setPrecio(Double precio) {
         this.precio = precio;
-    }
+    }*/
 }
