@@ -40,6 +40,7 @@ public class DepartamentoService implements IDepartamentoService {
     @Override
     public Departamento update(Departamento departamento) {
         return departamentoRepository.save(departamento);
+
     }
 
     @Override
@@ -54,5 +55,15 @@ public class DepartamentoService implements IDepartamentoService {
         }else{
         return "El departamento no se encuentra";
         }
+    }
+
+    @Override
+    public List<Departamento> findByPrecio(Double precio) {
+        return departamentoRepository.findByPrecio(precio);
+    }
+
+    @Override
+    public List<Departamento> findByPrecioLessThan(Double precio) {
+        return departamentoRepository.findByPrecioLessThan(precio);
     }
 }

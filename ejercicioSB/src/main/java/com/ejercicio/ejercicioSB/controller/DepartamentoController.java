@@ -24,6 +24,16 @@ public class DepartamentoController {
         return departamentoService.readById(id);
     }
 
+    @GetMapping("/departamento/Precio")
+    public List<Departamento> findByPrecio(@RequestParam Double precio){
+        return departamentoService.findByPrecio(precio);
+    }
+
+    @GetMapping("/departamento/lowerPrecio")
+    public List<Departamento> findByPrecioLessThan(@RequestParam Double precio){
+        return departamentoService.findByPrecioLessThan(precio);
+    }
+
     @PostMapping("/departamentos")
     public Departamento create(@RequestBody Departamento departamento) {
         return departamentoService.create(departamento);
