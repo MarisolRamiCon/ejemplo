@@ -12,4 +12,5 @@ public interface IDepartamentoService {
     public String deleteById(Integer id);
     public List<Departamento> findByPrecio(Double precio);
     public List<Departamento> findByPrecioLessThan(Double precio);
+    public List<Departamento> findByPrecioAndM2(Double precio, Double m2);
 }

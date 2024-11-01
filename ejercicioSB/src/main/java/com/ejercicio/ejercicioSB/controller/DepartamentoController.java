@@ -49,4 +49,9 @@ public class DepartamentoController {
         return departamentoService.deleteById(id);
     }
 
+    @GetMapping("/departamento/precioM2")
+    public List<Departamento> findByPrecioAndM2(@RequestParam Double precio, @RequestParam Double m2){
+        return departamentoService.findByPrecioAndM2(precio, m2);
+    }
+
 }
